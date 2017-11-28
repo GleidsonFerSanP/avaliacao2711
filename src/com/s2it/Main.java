@@ -21,15 +21,21 @@ public class Main {
 		}
 		
 		// Execução do exercício 9
-		
 		BinaryTree raiz = new BinaryTree(20);
         System.out.println("Criando arvore com a raiz " + raiz.getValue());
-       
         BinaryTreeUtils.insert(raiz, 22);
         BinaryTreeUtils.insert(raiz, 6);
         BinaryTreeUtils.insert(raiz, 15);
         BinaryTreeUtils.insert(raiz, 8);
         BinaryTreeUtils.insert(raiz, 17);
+        
+        try {
+        	BinaryTree noParaConsultar = new BinaryTree(6);
+        	
+			System.out.println("Valor total dos nós filhos de \""+noParaConsultar.getValue() +"\": "+BinaryTreeUtils.sumSubsequentsNodes(raiz, noParaConsultar));
+		} catch (NullOrEmptyException e) {
+			System.out.println(e.getMessage());
+		}
 		
 	}
 
